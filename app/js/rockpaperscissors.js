@@ -22,13 +22,13 @@ function randomPlay() {
 ////////////////////////////////////////////////
 
 function getPlayerMove(move) {
-	var move 
-		if (move != null){
-			move = move;
-		}
-		else {
-			move = getInput();
-		}
+    var move 
+        if (move != null){
+            move = move;
+        }
+        else {
+            move = getInput();
+        }
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
@@ -36,13 +36,13 @@ function getPlayerMove(move) {
 }
 
 function getComputerMove(move) {
-	var move 
-		if (move != null){
-			move = move;
-		}
-		else {
-			move = randomPlay();
-		}
+    var move 
+        if (move != null){
+            move = move;
+        }
+        else {
+            move = randomPlay();
+        }
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
@@ -84,8 +84,35 @@ function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
+    var winner;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
     /* YOUR CODE HERE */
+    getWinner(getPlayerMove(), getComputerMove());
+    if (winner == "player") {
+        playerWins++;
+    }
+    else if (winner=="computer") {
+        computerWins++;    
+    }
+    else {
+        (playerWins++ && computerWins++);
+    }
+    
+    
+   /* 
+    if (playerWins == 5){
+        console.log("Congratulations! The player won 5 times");
+    }
+        
+    else if(computerWins == 5){
+        console.log("Sorry, you lost 5 times")
+    }
+    else {
+        playToFive();
+    }
+    */
     return [playerWins, computerWins];
+    
 }
 
+playToFive();
